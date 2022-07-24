@@ -66,7 +66,7 @@ export default {
 		},
 		getAddress(address){
 			// 加入到历史记录中
-			let his = JSON.parse(localStorage.getItem('placeHistory'));
+			let his = JSON.parse(localStorage.getItem('placeHistory')) || [];
 			his.unshift(address);
 			let deWeightThree = () => {
 				let map = new Map();
@@ -79,6 +79,16 @@ export default {
 			}
 			his = deWeightThree();
 			localStorage.setItem('placeHistory',JSON.stringify(his));
+			// 获取当前地址的经纬度
+			let {geohash} = address;
+			localStorage.setItem('geohash',geohash);
+			this.$router.push({
+				path:'/home',
+				query:{
+					geohash
+				}
+			})
+
 		}
 	},
 	components:{
