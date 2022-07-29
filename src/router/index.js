@@ -63,7 +63,14 @@ const routes = [
                     title:'订单'
                 }
             },
-
+            {
+                path: '/search',
+                name: 'search',
+                component: () => import('../views/Search'),
+                meta:{
+                    title:'搜索'
+                }
+            }
         ]
     },
     {
