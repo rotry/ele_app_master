@@ -20,6 +20,11 @@ export default {
 					path:'/home'
 				},
 				{
+					title:'搜索',
+					icon:'el-icon-search',
+					path:'/search'
+				},
+				{
 					title:'订单',
 					icon:'el-icon-document',
 					path:'/order'
