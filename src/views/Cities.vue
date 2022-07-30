@@ -57,6 +57,7 @@ export default {
 	methods:{
 		toDetail(_id){
 			let id = _id;
+			localStorage.setItem('cityId',id);
 			this.$router.push({
 				name:'city',
 				params:{
